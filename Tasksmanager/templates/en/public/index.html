@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title_html %}Project List {% endblock%}</title>
+</head>
+<body>
+<h1>{% block h1 %}<a href="{% url 'public_connection' %}">Connection</a>{% endblock %}</h1>
+<article>{% block article_content %}
+
+    <h3> <a href="{% url 'create-developer' %}"> Create Developer </a> </h3>
+    {% if all_projects|length > 0 %}
+    <table>
+        <thead><tr><td>Id</td><td>Title</td></tr></thead>
+        <tbody>
+        {% for project in all_projects %}
+        <tr>
+            <td>{{ project.id }}</td>
+            <td>{{ project.title }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <span>no projects available</span>
+    {% endif %}
+
+    <a href="{% url 'create-project' %}">Create Project</a>
+    <a href="{% url 'create-task' %}">Create task</a>
+    <a href="{% url 'project-list' %}">List of projects</a>
+    <a href="{% url 'task-detail' '2' %}">Detail First View</a>
+    {% endblock%}
+</article>
+
+
+</body>
+</html>

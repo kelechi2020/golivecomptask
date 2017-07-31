@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title_html %}
+List of Developers
+{% endblock %}
+
+{% block h1 %} List of Developers{% endblock%}
+{% block article_content %}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th>Login</th>
+        <th></th>
+        <th></th>
+        <th>Supervisor</th>
+    </tr>
+    {% for dev in object_list %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="#">{{ dev }}</a></td>
+        <td></td>
+        <td></td>
+        <td>{{ dev.user_auth.last_name }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ dev.supervisor }}</td>
+    </tr>
+   {% endfor %}
+</table>
+{% if is_paginated %}
+    <div class="pagination">
+        <span>
+            {% if page_obj.has_previous %}
+            <a href="{% url 'developer-list' %}?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span style="margin-left:15px; margin-right:15px;">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} .
+            </span>
+            {% if page_obj.has_next %}
+            <a href="{% url 'developer-list' %}?page={{ page_obj.next_page_number }}"> Next</a>
+            {% endif %}
+        </span>
+
+    </div>
+{% endif %}
+{% endblock %}

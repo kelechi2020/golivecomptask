@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title_html %}
+TASK DETAILS
+{% endblock %}
+
+{% block h1 %} TASK DETAILS{% endblock%}
+{% block article_content %}
+
+<h4>
+    {{ object.title }}
+</h4>
+<table>
+<tr>
+    <td> Project : {{ object.project }}</td>
+    <td> Developer : {{ object.app_user }}</td>
+</tr>
+
+    <tr>
+        <td> Importance : {{ object.importance }}</td>
+        <td> Time elapsed : {{ object.time_elapsed }}</td>
+    </tr>
+</table>
+<p>
+    {{ object.description }}
+</p>
+
+{% endblock %}
