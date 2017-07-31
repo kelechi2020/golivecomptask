@@ -20,7 +20,7 @@ TEMPLATE_DIRS = (
   # Don't forget to use absolute paths, not relative paths.
 )
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, '../TasksManager/static/'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 # Quick-start development settings - unsuitable for production
@@ -34,19 +34,20 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://computask.herokuapp.com/' ]
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'Tasksmanager',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Tasksmanager'
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,5 +105,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_URL = '/static/'
