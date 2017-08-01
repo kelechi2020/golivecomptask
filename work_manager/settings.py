@@ -36,7 +36,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['https://computask.herokuapp.com/' ]
+ALLOWED_HOSTS = ['computask.herokuapp.com' ]
 
 
 # Application definition
@@ -73,12 +73,12 @@ LOGIN_URL = 'public_connection'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'comptask',
-        'USER': 'egbosikelechi',
-        'PASSWORD': 'Kellyhandsome123456789',
-        'HOST': 'comptask..database.windows.net',
-        'PORT': '1433',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':  'dgdmnoq4fshqf',
+        'USER': 'odomxsihcewbml',
+        'PASSWORD': '0aedee2380321b711f954d6611d2b0953498e8bfa86bac9df3754a5e8603faf4',
+        'HOST': 'ec2-54-243-252-232.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 """
