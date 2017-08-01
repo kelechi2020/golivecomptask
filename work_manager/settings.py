@@ -20,7 +20,7 @@ TEMPLATE_DIRS = (
   # Don't forget to use absolute paths, not relative paths.
 )
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, './TasksManager/static/'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
 
 # Quick-start development settings - unsuitable for production
@@ -107,5 +107,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
