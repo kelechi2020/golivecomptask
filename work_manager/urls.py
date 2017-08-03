@@ -29,8 +29,7 @@ urlpatterns = [
     url(r'^update-task-time-(?P<pk>\d+)$', UpdateViewManual.Task_update_time.as_view(), name="update-task-time"),
     url(r'^delete-task-(?P<pk>\d+)$', DeleteView.Task_delete.as_view(), name="delete-task"),
     url(r'^task-list$', 'Tasksmanager.views.task_list.page', name='task-list'),
-    url(r'^task-delete-ajax$', 'Tasksmanager.views.ajax.task_delete_ajax.page', name='task_delete_ajax')
-
-
+    url(r'^task-delete-ajax$', 'Tasksmanager.views.ajax.task_delete_ajax.page', name='task_delete_ajax'),
+    url(r'^logout$','Tasksmanager.views.logout.page', name="logout"),
 
 ]
