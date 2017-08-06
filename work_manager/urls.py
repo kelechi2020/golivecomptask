@@ -1,10 +1,13 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import CreateView, UpdateView
+
+import email_messages
 from Tasksmanager.models import Project, Task, Developer
 from django.views.generic.list import ListView
 from Tasksmanager.views.cbv import listviews, DetailView, developerDetailView, DeleteView, UpdateViewCustom
 from Tasksmanager.views.cbv import UpdateView as UpdateViewManual
+
 admin.autodiscover()
 urlpatterns = [
     # Examples:
@@ -13,6 +16,7 @@ urlpatterns = [
 
 
     url(r'^admin', include(admin.site.urls)),
+    url(r'^email', include('email_messages.urls')),
     url(r'^$', 'Tasksmanager.views.index.page', name="index"),
     url(r'^index$', 'Tasksmanager.views.index.page'),
     url(r'^connection-Tasksmanager$', 'Tasksmanager.views.connection.page', name="public_connection"),

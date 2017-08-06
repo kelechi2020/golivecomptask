@@ -15,6 +15,7 @@ Create Developer
         <th></th>
         <th></th>
         <th>Client Name</th>
+        <th>Time created</th>
     </tr>
     {% for project in object_list %}
     <tr>
@@ -26,6 +27,8 @@ Create Developer
         <td>{{ project.description }}</td>
         <td></td>
         <td></td>
+        <td>{{ project.created }}</td>
+
         <td>{{ project.client_name }}</td>
     </tr>
    {% endfor %}

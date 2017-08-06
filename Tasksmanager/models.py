@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from Tasksmanager.utils.models import CreationModificationDateMixin
 
 
 class UserProfile(models.Model):
@@ -19,7 +20,7 @@ class UserProfile(models.Model):
         return self.user_auth.username
 
 
-class Project(models.Model):
+class Project(CreationModificationDateMixin):
     title = models.CharField(max_length=50, verbose_name="Title")
     description = models.CharField(max_length=1000, verbose_name="Description")
     client_name = models.CharField(max_length=1000, verbose_name="Client Name")
